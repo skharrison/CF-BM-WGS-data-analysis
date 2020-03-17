@@ -21,7 +21,12 @@ Project Burk github Draft :-)
 - scripts and code for extraction of desired info
 - scripts for plotting and visualization (notebooks?)
 
-***Related information***
+**Phylogenetic Analysis**
+- SNP alignment (software, scripts, code) .. possibly just whole genome alignment??
+- raxml script (script, options chosen)
+- visualization (software, options chosen, outgroup/rooting choices)
+
+**Related information**
 - Background info on CF/Burkholderia/bacterial evolution in vivo
 - bacterial strain information/tables 
 - methods for sequencing/isolation/culturing
