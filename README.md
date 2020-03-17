@@ -21,5 +21,9 @@ Project Burk github Draft :-)
 - scripts and code for extraction of desired info
 - scripts for plotting and visualization (notebooks?)
 
+***Related information***
+- Background info on CF/Burkholderia/bacterial evolution in vivo
+- bacterial strain information/tables 
+- methods for sequencing/isolation/culturing
 
 
