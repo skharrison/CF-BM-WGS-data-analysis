@@ -3,15 +3,15 @@ Project Burk github Draft :-)
 ### CF-BM-WGS-data-analysis
 
 
- - Repoistory containing pipeline and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame in cystic fiborsis patient. 
+ - Repository containing pipeline and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame in cystic fibrosis patient. 
 
  ## Submodule descriptions 
 
-- Submodules from master of each individual part of the analysis list cotents/general part of project that submodule contains to keep everything organized.
+- Submodules from master of each individual part of the analysis list contents/general part of project that submodule contains to keep everything organized.
 
 
 **Variant calling pipeline (software used to get vcf)**
-- required software (qc,assembly,etc)
+- required software (QC, assembly, etc)
 - python/perl code for allele frequency (AF) calculation, sequence error cutoff
 - shell scripts used to execute all software and python (that way all command line options are displayed)
 
