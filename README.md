@@ -1,5 +1,11 @@
 Project Burk github Draft :-) 
 
+#could use something like these to help brighten up readme and add color coding
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Installation`
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `Pipeline`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Visualization`
+
+
 ### CF-BM-WGS-data-analysis
 
 
@@ -27,6 +33,7 @@ Project Burk github Draft :-)
 - visualization (software, options chosen, outgroup/rooting choices)
 
 **Related information**
+- Manuscript
 - Background info on CF/Burkholderia/bacterial evolution in vivo
 - bacterial strain information/tables 
 - methods for sequencing/isolation/culturing
