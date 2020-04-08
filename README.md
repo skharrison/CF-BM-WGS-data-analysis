@@ -7,7 +7,7 @@ Project Burk github Draft :-)
 
  ## Submodule descriptions 
 
-- Submodules from master of each individual part of the analysis list contents/general part of project that submodule contains to keep everything organized.
+- Submodule of each individual part of the analysis list contents/general part of project that submodule contains to keep everything organized.
 
 
 **Variant calling pipeline (software used to get vcf)**

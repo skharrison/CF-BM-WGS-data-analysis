@@ -1,0 +1,14 @@
+multivcfanalyzer \
+NA \
+/Users/sarahharrison/Documents/GitHub/CF-BM-WGS-data-analysis/AS_vcfs/GCF_003019965.1_ASM301996v1_genomic.fna \
+NA \
+/Users/sarahharrison/Documents/GitHub/CF-BM-WGS-data-analysis/AS_vcfs/multi_test \
+T \
+30 \
+5 \
+0.9 \
+0.1 \
+NA \
+/Users/sarahharrison/Documents/GitHub/CF-BM-WGS-data-analysis/AS_vcfs/AS218/AS218.recal.vcf \
+/Users/sarahharrison/Documents/GitHub/CF-BM-WGS-data-analysis/AS_vcfs/AS154/AS154_S31.recal.vcf \
+/Users/sarahharrison/Documents/GitHub/CF-BM-WGS-data-analysis/AS_vcfs/AS142/AS142_S15.recal.vcf
