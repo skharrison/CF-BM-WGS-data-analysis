@@ -1,13 +1,11 @@
-Project Burk github Draft :-) 
 
-### CF-BM-WGS-data-analysis
+# Burkholderia WGS Analysis 
 
+ - Repository containing all pieces and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.  
 
- - Repository containing pipeline and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame in cystic fibrosis patient. 
+ ## Software Dependacies 
 
- ## Submodule descriptions 
-
-- Submodule of each individual part of the analysis list contents/general part of project that submodule contains to keep everything organized.
+- [http://www.usadellab.org/cms/?page=trimmomatic][Trimmomatic] 
 
 
 **Variant calling pipeline (software used to get vcf)**
