@@ -3,23 +3,15 @@
 
  - Repository containing all pieces and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.  
 
- ## Software Dependacies 
 
-- [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
-- [Fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
-- [BWA](http://bio-bwa.sourceforge.net/)
-- [Samtools](http://www.htslib.org/)
-- [Python 3](https://www.python.org/download/releases/3.0/)
-
-
-**Quality Control**
+### Data Quality Control
 - Raw reads trimmed with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) using the following parameters:
 ``` 
 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:80
 ```
 - Visualized reads using [Fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) manually and trimmed more as needed
 
-**Reference Mapping and Variant Calling**
+### Reference Mapping and Variant Calling
 - Trimmed reads mapped using [BWA](http://bio-bwa.sourceforge.net/) to generate SAM file. Duplicates marked and sorted by [GATK4](https://gatk.broadinstitute.org/hc/en-us) and [Samtools](http://www.htslib.org/).
 - Script snippet to accomplish this:
 ```
