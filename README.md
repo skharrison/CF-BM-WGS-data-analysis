@@ -11,7 +11,7 @@
 - add in script with code snippet to accomblish for x # of samples 
 - Raw reads trimmed with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) using the following parameters:
 ``` 
-ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:80
+ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:100
 ```
 - Visualized reads using [Fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) manually and trimmed more as needed
 
@@ -52,7 +52,7 @@ done
 > -1 forward read file -2 reverse read file.    
 > -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own diretory.    
 
-
+- add attempt to do with their error correction on a few samples and then compare assembly stats 
 
 **VCF annotation/analysis**
 - code for vcf annotation (perl/python?), KEGG/KOG protein prediction
