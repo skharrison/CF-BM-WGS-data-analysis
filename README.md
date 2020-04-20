@@ -39,8 +39,12 @@ add code here can make cell python color coding
 
 ### Genome Assembly
 - Used [Spades](http://home.cc.umanitoba.ca/~psgendb/doc/spades/manual.html) on all previously trimmed paired end data. Now have files such as, AS{sampleID}_R1.fastq and AS{sampleID}_R2.fastq. Then used bash script with loop to accomplish all files. Bash script snippet:
+
+**INPUT FILE FORMAT**: sampleID_R1.fastq, sampleID_R2.fastq
+***INPUUT FILE EXAMPLE**: AS218_R1.fastq, AS218_R2.fastq
+
 ```
-for file1 in /users/sharr199/WGS3_data2/spades_analysis/*R1*fastq
+for file1 in /path/to/trimmed/data/directory/*R1*fastq
 do 
 file2=${file1/R1/R2}
 out=${file1%%_R1.fastq}_output
