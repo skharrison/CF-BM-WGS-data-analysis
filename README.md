@@ -33,6 +33,23 @@ add code here can make cell python color coding
 - Pandas table and manipulation
 - R used to generate final variants kept based on standard deviation 
 
+### Genome Assembly
+- Used [Spades](http://home.cc.umanitoba.ca/~psgendb/doc/spades/manual.html) on all previously trimmed paired end data. Now have files such as, AS{sampleID}_R1.fastq and AS{sampleID}_R2.fastq. Then used bash script with loop to accomplish all files. Bash script snippet:
+```
+for file1 in /users/sharr199/WGS3_data2/spades_analysis/*R1*fastq
+do 
+file2=${file1/R1/R2}
+out=${file1%%_R1.fastq}_output
+spades.py -k 21,33,55,77 -c --only-assembler -1 $file1 -2 $file2 -o $out
+done
+```
+> -c minimizes mismatches.   
+> -k 21,33,5,77 because recomennded to use for short paired end Illumina reads.    
+> -1 forward read file -2 reverse read file.    
+> -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own diretory.    
+
+
+
 **VCF annotation/analysis**
 - code for vcf annotation (perl/python?), KEGG/KOG protein prediction
 - script to remove common variants to all (bcftool commands)
