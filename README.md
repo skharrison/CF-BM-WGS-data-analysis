@@ -4,7 +4,7 @@
  - Repository containing all pieces and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.
  - potentially add beginning step to install using conda at each step for each piece of software (all is definetely on conda) just to make super easy to implement if make code snippets more transferrable.
  - also somewhere would like to add a bash script template that can easily be modified for this project that allows everything to work when submitting jobs to a queing system. 
- - 
+
 
 
 ### Data Quality Control
@@ -40,8 +40,8 @@ add code here can make cell python color coding
 ### Genome Assembly
 - Used [Spades](http://home.cc.umanitoba.ca/~psgendb/doc/spades/manual.html) on all previously trimmed paired end data. Now have files such as, AS{sampleID}_R1.fastq and AS{sampleID}_R2.fastq. Then used bash script with loop to accomplish all files. Bash script snippet:
 
-**INPUT FILE FORMAT**: sampleID_R1.fastq, sampleID_R2.fastq
-***INPUUT FILE EXAMPLE**: AS218_R1.fastq, AS218_R2.fastq
+**INPUT FILE FORMAT**: sampleID_R1.fastq, sampleID_R2.fastq .   
+**INPUUT FILE EXAMPLE**: AS218_R1.fastq, AS218_R2.fastq .   
 
 ```
 for file1 in /path/to/trimmed/data/directory/*R1*fastq
