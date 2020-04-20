@@ -2,10 +2,13 @@
 # Burkholderia WGS Analysis 
 
  - Repository containing all pieces and code involved in analyzing whole genome sequences of 19 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.
- - potentially add beginning step to install using conda at each step for each piece of software (all is definetely on conda) just to make super easy to implement if make code snippets more transferrable. 
+ - potentially add beginning step to install using conda at each step for each piece of software (all is definetely on conda) just to make super easy to implement if make code snippets more transferrable.
+ - also somewhere would like to add a bash script template that can easily be modified for this project that allows everything to work when submitting jobs to a queing system. 
+ - 
 
 
 ### Data Quality Control
+- add in script with code snippet to accomblish for x # of samples 
 - Raw reads trimmed with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) using the following parameters:
 ``` 
 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:80
