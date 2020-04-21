@@ -58,6 +58,17 @@ done
 
 - add attempt to do with their error correction on a few samples and then compare assembly stats 
 
+### Genome Comparative Analysis 
+- Using [Mauve](http://darlinglab.org/mauve/download.html) to conduct comparisons against complete Burkholderia _multivorans_ on refseq [NCBI](https://www.ncbi.nlm.nih.gov/assembly). Downloaded all complete genomes in Genbank gbff format (there is 15).  
+
+**IMPORTANT NOTE:** Mauve only accepts genbank input as .gbk extension so a helpful bash loop to rename all file extensions in a directory
+
+```
+for file in *.gbff; do
+mv -- "$file" "${file%.gbff}.gbk"
+done
+```
+
 **VCF annotation/analysis**
 - code for vcf annotation (perl/python?), KEGG/KOG protein prediction
 - script to remove common variants to all (bcftool commands)
