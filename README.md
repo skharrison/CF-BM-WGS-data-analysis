@@ -26,6 +26,10 @@ samtools index AS${sample}_marked_duplicates.bam
 ```
 - Samtools used to call mpileup files:
 ```add mpileup command here
+list_of_samples="218 219 222 223 224 225 226 227 228 229 230 231 232 233 236 237 240"
+for sample in $list_of_samples; do
+samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
+done
 ```
 
 ### Genome Variation/Mutation Analysis
