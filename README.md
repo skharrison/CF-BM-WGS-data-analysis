@@ -2,7 +2,6 @@
 # Burkholderia WGS Analysis 
 
 
-https://skharrison.github.io/CF-BM-WGS-data-analysis/python-final.html
 * Repository containing all pieces and code involved in analyzing whole genome sequences of 17 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis. 
  * Table containing all strain information and patient antibiotic use located [link to table]
 
@@ -40,6 +39,8 @@ done
 - link to notebook for filtering and whatever else john wants to say about that stuff 
 
 - Link to notebook on all analysis of filtered variants, maybe add graphs generated in notebook to display what we concluded from our code underneath link to jupyter notebook   
+
+-Example of the [jupyter display](docs/python-final.html) 
 
 
 
