@@ -46,11 +46,7 @@ done
 
 - Example of one frame generated from variant position numbers and GFF of reference sequence:
 
-![Table image]
-(https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
-
-
-
+![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
 
 
 
