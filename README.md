@@ -65,9 +65,9 @@ spades.py -k 21,33,55,77 -c --only-assembler -1 $file1 -2 $file2 -o $out
 done
 ```
 > -c minimizes mismatches.   
-> -k 21,33,5,77 because recomennded to use for short paired end Illumina reads.    
+> -k 21,33,5,77 because recommended to use for short paired end Illumina reads.    
 > -1 forward read file -2 reverse read file.    
-> -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own diretory.    
+> -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own directory.    
 
 - Annotated genomes using Prokka (add command used below)
 
