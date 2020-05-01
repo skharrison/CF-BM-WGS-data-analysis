@@ -24,7 +24,7 @@ samtools sort -O bam -o AS${sample}.sorted.bam AS${sample}.sam
 gatk MarkDuplicatesSpark -I AS${sample}.sorted.bam -O AS${sample}_marked_duplicates.bam
 samtools index AS${sample}_marked_duplicates.bam
 ```
-- Samtools used to call mpileup files:
+- [Samtools](http://www.htslib.org/) used to call mpileup files:
 ```add mpileup command here
 list_of_samples="218 219 222 223 224 225 226 227 228 229 230 231 232 233 236 237 240"
 for sample in $list_of_samples; do
@@ -38,9 +38,17 @@ done
 ### SNP Variant Analysis 
 - link to notebook for filtering and whatever else john wants to say about that stuff 
 
-- Link to notebook on all analysis of filtered variants, maybe add graphs generated in notebook to display what we concluded from our code underneath link to jupyter notebook   
+**Jupyter Notebook [link here somehow] containing all code to analyze:**
+-------
+- Distribution of filtered SNP locations to determine candidate recombinant regions
+- Extract all genes or just protein coding genes located in SNP rich locations 
+- Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
 
--Example of the [jupyter display](docs/python-final.html) 
+- Example of one frame generated from variant position numbers and GFF of reference sequence:
+
+![Table image]
+(https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
+
 
 
 
