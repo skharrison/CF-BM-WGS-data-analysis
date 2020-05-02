@@ -9,7 +9,6 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
             for line in fin:
                 snps = []
                 indels = []
-                ifhas = False
                 acount = 0
                 ccount = 0
                 tcount = 0
