@@ -34,6 +34,7 @@ done
 - add stuff about script ran for SNP calling and table generation and example snip of table (link to script?)
 
 - if in time add script ran for Indel calling and table generation (link)
+![frequency_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/frequency_table.png)
 
 ### SNP Variant Analysis 
 - link to notebook for filtering and whatever else john wants to say about that stuff 
