@@ -3,7 +3,6 @@
 
 
 * Repository containing all pieces and code involved in analyzing whole genome sequences of 17 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis. 
- * Table containing all strain information and patient antibiotic use located [link to table]
 
 
 ### Data Quality Control
@@ -31,17 +30,17 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-- add stuff about script ran for SNP calling and table generation and example snip of table (link to script?)
+- **JOHN ADD SCRIPT AND STEPS TO ACCOMPLISH GENERATION HERE**
 
-- if in time add script ran for Indel calling and table generation (link)
+- Snippet of table generated from script above 
 
 ![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
 
 
-### SNP Variant Analysis 
+## SNP Variant Analysis 
 - link to notebook for filtering and whatever else john wants to say about that stuff 
 
-**Jupyter Notebook [link here somehow] containing all code to analyze:**
+### [Jupyter Notebook] [link here somehow] containing all code to analyze:**
 -------
 - Distribution of filtered SNP locations to determine candidate recombinant regions
 - Extract all genes or just protein coding genes located in SNP rich locations 
