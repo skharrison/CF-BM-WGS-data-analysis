@@ -3,8 +3,8 @@
 
 
 * Repository containing all pieces and code involved in analyzing whole genome sequences of 17 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.
-* Highly recommend use of [anaconda](https://www.anaconda.com/products/individual) to install software components.  
-* In order to carry out SNP analysis [Python3](https://www.python.org/download/releases/3.0/) and [Jupyter notebook](https://jupyter.org/) both also easily installed via anaconda. 
+* Highly recommend use of [Anaconda](https://www.anaconda.com/products/individual) to install software components.  
+* In order to carry out SNP analysis, interactive python3 [Jupyter notebook](https://jupyter.org/) utilized, also easily installed via Anaconda. 
 
 ### Data Quality Control
 - add in script with code snippet to accomblish for x # of samples 
@@ -98,11 +98,21 @@ done
 - add code for generating alignments via progressive mauve
 - add all steps for using ClonalOrigin to generate rearrangment maps to be analyzed
 
-### Phame Phylogenetic Analysis (maybe..)
+### Phylogenetic Analysis
+STEPS PLAN TO DO:
+- Obtain high quality variants for each strain 
+- Extract all genes containing variants from reference using Bipython
+- write python code to modify reference gene sequences for each sample to contain ALT positions
+- concat all genes together to create consensus fasta sequence for each sample (header being sample name)
+- concat all samples together to create one multifastA 
+- use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment 
+- input sequence alignment into RAXML using following command line:
+
+```
+raxmlHPC -f a -x 43734 -p 89493 -# 100 -s snp_alignment.fasta -n phylo_result -m GTRGAMMA 
+```
 
 
 ### Automating steps??? (get to this hopefully eventually)
 - Snakemake pipeline one day 
 
-### Helpful Bioinformatics along the way... 
-- Add cool/helpful places that have found helpful while doing bacterial genome analysis 
