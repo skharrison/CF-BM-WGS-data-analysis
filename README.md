@@ -59,7 +59,7 @@ Table Example:
 - Extract all genes located in SNP rich locations from GFF file (from same reference that mapped reads to)
 - Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
 
-- Example of one frame generated from variant position numbers and GFF of reference sequence:
+- Table created displaying top 15 protein coding genes with highest numbers of SNPs:
 
 ![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
 
