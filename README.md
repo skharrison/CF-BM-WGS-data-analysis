@@ -37,12 +37,9 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-[Python script](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs variants from mpileup and generates a table for each strain containing alternate allele and allele frequency
+- **JOHN ADD SCRIPT AND STEPS TO ACCOMPLISH GENERATION HERE**
 
-[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) 
-
-- Merges all strain tables to one large dataframe
-- Only keeps allele frequencies that rise or fall in frequency
+[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) displaying steps involved in creation of all samples called variants merged table.
 
 Table Example:
 
@@ -82,34 +79,36 @@ done
 > -1 forward read file -2 reverse read file.    
 > -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own directory.    
 
-- Annotated genomes using Prokka (add command used below)
+- Annotated genomes using Prokka
 
 ```
 prokka command here
 ```
 
-### Genome Comparative Analysis and Rearrangement Analysis
-- Using [Mauve](http://darlinglab.org/mauve/download.html) to conduct comparisons against complete Burkholderia _multivorans_ on refseq [NCBI](https://www.ncbi.nlm.nih.gov/assembly). Downloaded all complete genomes in Genbank gbff format (there is 15).  
+### Genome Comparative Analysis and Recombination Analysis
+- Using [Mauve](http://darlinglab.org/mauve/download.html) to analyze regions of potential recombination 
 
-**IMPORTANT NOTE:** Mauve only accepts genbank input as .gbk extension so a helpful bash loop to rename all file extensions in a directory
-
+**IMPORTANT NOTE:** Mauve only accepts genbank input as .gbk extension. Also accepts fasta files, so can just use reference fasta, and contig fastas obtained from spades. However, if need to change extension names can easily do so using bash loop:
 ```
 for file in *.gbff; do
 mv -- "$file" "${file%.gbff}.gbk"
 done
 ```
-- add code for generating alignments via progressive mauve
-- add all steps for using ClonalOrigin to generate rearrangment maps to be analyzed
+- [ ] add code for generating alignments via progressive mauve
+- [ ] Once created whole genome alignment view areas that identified as SNP dense from above 
+- [ ] Potentially use [ClonalOriginML](https://github.com/xavierdidelot/ClonalFrameML) 
 
 ### Phylogenetic Analysis
 STEPS PLAN TO DO:
-- Obtain high quality variants for each strain 
-- Extract all genes containing variants from reference using Bipython
-- write python code to modify reference gene sequences for each sample to contain ALT positions
-- concat all genes together to create consensus fasta sequence for each sample (header being sample name)
-- concat all samples together to create one multifastA 
-- use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment 
-- input sequence alignment into RAXML using following command line:
+- [ ] Need to do recombination analysis first as these regions can interfere with phylogeny results
+- [ ] Obtain high quality variants for each strain 
+- [ ] Extract all genes containing variants from reference using Bipython
+- [ ] Write python code to modify reference gene sequences for each sample to contain ALT positions
+- [ ] Concat all genes together to create consensus fasta sequence for each sample (header being sample name)
+- [ ] Concat all samples together to create one multifastA 
+- [ ] Use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment 
+- [ ] Input sequence alignment into RAXML using following command line:
+- [ ] Visualize results using [FigTree](https://beast.community/figtree)
 
 ```
 raxmlHPC -f a -x 43734 -p 89493 -# 100 -s snp_alignment.fasta -n phylo_result -m GTRGAMMA 
