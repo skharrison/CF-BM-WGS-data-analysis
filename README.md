@@ -37,11 +37,18 @@ done
 ![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
 
 
-## SNP Variant Analysis 
-- link to notebook for filtering and whatever else john wants to say about that stuff 
-
-### [Jupyter Notebook] [link here somehow] containing all code to analyze:**
+### SNP Filtering and Quality Control
 -------
+[Jupyter notebook with filtering steps/code](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb). 
+  
+**Contains:**
+- talk about stuff
+
+### SNP Position Analysis 
+-------
+[Jupyter notebook contains all analysis and code to analyze SNPs](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/SNP_Analysis.ipynb). 
+  
+**Contains:**
 - Distribution of filtered SNP locations to determine candidate recombinant regions
 - Extract all genes or just protein coding genes located in SNP rich locations 
 - Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
