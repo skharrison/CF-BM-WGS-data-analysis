@@ -48,7 +48,7 @@ done
 
 Table Example:
 
-![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
+![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
 
 ### SNP Position Analysis 
 -------
