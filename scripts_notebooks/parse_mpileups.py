@@ -7,7 +7,6 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
         output_text = ""
         with open(file) as fin:   
             for line in fin:
-                snps = []
                 indels = []
                 actualindels = []
                 ifhas = False
@@ -25,7 +24,6 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
                         indels.append(part)
                         continue
                     elif "A" in part or "T" in part or "C" in part or "G" in part or "a" in part or "t" in part or "c" in part or "g" in part:
-                        snps.append(part)
                         for base in part:
                             if base == "A" or base == "a":
                                 acount+=1
