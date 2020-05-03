@@ -9,11 +9,15 @@
 **NOTE:** ALL samples analyzed were sequenced with 151bp Illumina paired end reads  
 
 ### Data Quality Control
-- add in script with code snippet to accomblish for x # of samples 
 - Raw reads trimmed with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) using the following parameters:
 ``` 
 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:100
 ```
+> - ILLUMINACLIP: Contained TruSeq3 primers.  
+> - LEADING/TRAILING: Removing poor qulaity beginning and ends. 
+> - SLIDINGWINDOW: If any window of 4 reads quality drops below 15 will cut sequence. 
+> - MINLEN: Chose a conservative 100 to ensure only analyzing high quality read data.  
+
 - Visualized reads using [Fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) manually and trimmed more as needed.
 
 ### Reference Mapping and Variant Calling
@@ -33,9 +37,12 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-- **JOHN ADD SCRIPT AND STEPS TO ACCOMPLISH GENERATION HERE**
+[Python script](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs variants from mpileup and generates a table for each strain containing alternate allele and allele frequency
 
-[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) displaying steps involved in creation of all samples called variants merged table.
+[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) 
+
+- Merges all strain tables to one large dataframe
+- Only keeps allele frequencies that rise or fall in frequency
 
 Table Example:
 
