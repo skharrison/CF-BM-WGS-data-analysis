@@ -2,8 +2,9 @@
 # Burkholderia WGS Analysis 
 
 
-* Repository containing all pieces and code involved in analyzing whole genome sequences of 17 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis. 
-
+* Repository containing all pieces and code involved in analyzing whole genome sequences of 17 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.
+* Highly recommend use of [anaconda](https://www.anaconda.com/products/individual) to install software components.  
+* In order to carry out SNP analysis [Python3](https://www.python.org/download/releases/3.0/) and [Jupyter notebook](https://jupyter.org/) both also easily installed via anaconda. 
 
 ### Data Quality Control
 - add in script with code snippet to accomblish for x # of samples 
