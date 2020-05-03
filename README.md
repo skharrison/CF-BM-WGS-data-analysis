@@ -9,11 +9,15 @@
 **NOTE:** ALL samples analyzed were sequenced with 151bp Illumina paired end reads  
 
 ### Data Quality Control
-- add in script with code snippet to accomblish for x # of samples 
 - Raw reads trimmed with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) using the following parameters:
 ``` 
 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:100
 ```
+> - ILLUMINACLIP: Contained TruSeq3 primers.  
+> - LEADING/TRAILING: Removing poor qulaity beginning and ends. 
+> - SLIDINGWINDOW: If any window of 4 reads quality drops below 15 will cut sequence. 
+> - MINLEN: Chose a conservative 100 to ensure only analyzing high quality read data.  
+
 - Visualized reads using [Fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) manually and trimmed more as needed.
 
 ### Reference Mapping and Variant Calling
