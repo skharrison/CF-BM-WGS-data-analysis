@@ -37,7 +37,7 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-[Python script](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs variants from mpileup and generates a table for each strain containing alternate allele and allele frequency
+[Python script](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs single nucleotide variants positions from mpileup and generates a table for each strain containing alternate allele and allele frequency (# alt alleles at position)/(total reads at position). 
 
 [Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) 
 
@@ -61,7 +61,6 @@ Table Example:
 - Example of one frame generated from variant position numbers and GFF of reference sequence:
 
 ![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
-
 
 
 ### Genome Assembly
