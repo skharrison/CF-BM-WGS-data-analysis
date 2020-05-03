@@ -32,8 +32,6 @@ done
 ```
 - **JOHN ADD SCRIPT AND STEPS TO ACCOMPLISH GENERATION HERE**
 
-- Snippet of table generated from script above 
-
 [Creation of merged table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb)
 
 ![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
