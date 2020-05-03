@@ -33,17 +33,11 @@ done
 ```
 - **JOHN ADD SCRIPT AND STEPS TO ACCOMPLISH GENERATION HERE**
 
-[Creation of merged table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb)
+[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) displaying steps involved in creation of all samples called variants merged table.
+
+Table Example:
 
 ![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
-
-
-### SNP Filtering and Quality Control
--------
-[Jupyter notebook with filtering steps/code](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb). 
-  
-**Contains:**
-- talk about stuff
 
 ### SNP Position Analysis 
 -------
