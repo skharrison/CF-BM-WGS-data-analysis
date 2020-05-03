@@ -6,6 +6,8 @@
 * Highly recommend use of [Anaconda](https://www.anaconda.com/products/individual) to install software components.  
 * In order to carry out SNP analysis, interactive python3 [Jupyter notebook](https://jupyter.org/) utilized, also easily installed via Anaconda. 
 
+**NOTE:** ALL samples analyzed were sequenced with 151bp Illumina paired end reads  
+
 ### Data Quality Control
 - add in script with code snippet to accomblish for x # of samples 
 - Raw reads trimmed with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) using the following parameters:
