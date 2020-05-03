@@ -37,9 +37,12 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-- **JOHN ADD SCRIPT AND STEPS TO ACCOMPLISH GENERATION HERE**
+[Python script](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs variants from mpileup and generates a table for each strain containing alternate allele and allele frequency
 
-[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) displaying steps involved in creation of all samples called variants merged table.
+[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) 
+
+- Merges all strain tables to one large dataframe
+- Only keeps allele frequencies that rise or fall in frequency
 
 Table Example:
 
