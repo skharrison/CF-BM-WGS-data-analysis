@@ -37,7 +37,7 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-[parse_mpileups.py](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs single nucleotide variants positions from mpileup and generates a table for each strain containing alternate allele and allele frequency (# alt alleles at position)/(total reads at position). 
+[Script: parse_mpileups.py](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs single nucleotide variants positions from mpileup and generates a table for each strain containing alternate allele and allele frequency (# alt alleles at position)/(total reads at position). 
 
 [Jupyter Notebook: parse_mut_calls.ipynb](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb)
 
@@ -54,7 +54,7 @@ Table Example:
 -------
 [Jupyter Notebook: SNP_Analysis.ipynb](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/SNP_Analysis.ipynb) 
   
-**Contains code:**
+**Contains code to:**
 - Plot distribution of filtered SNP locations across all chromosomes
 - Extract all genes located in SNP rich locations from GFF file (from same reference that mapped reads to)
 - Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
