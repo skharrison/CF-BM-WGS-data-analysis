@@ -37,13 +37,14 @@ for sample in $list_of_samples; do
 samtools mpileup -f GCF_003019965.1_ASM301996v1_genomic.fna -B -R -aa AS${sample}.sorted.bam -o AS${sample}.mpileup
 done
 ```
-[Python script](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs single nucleotide variants positions from mpileup and generates a table for each strain containing alternate allele and allele frequency (# alt alleles at position)/(total reads at position). 
+[parse_mpileups.py](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mpileups.py) grabs single nucleotide variants positions from mpileup and generates a table for each strain containing alternate allele and allele frequency (# alt alleles at position)/(total reads at position). 
 
-[Jupyter Notebook](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb) 
+[Jupyter Notebook: parse_mut_calls.ipynb](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/parse_mut_calls.ipynb)
 
-- In each table remove frequencies that fall below 0.03
+**Contains code to:**
+- Remove frequencies that fall below 0.03 in each table (remove variants due to sequence error)
 - Merge all strain tables to one large dataframe
-- Keep sites that rise or fall in frequency
+- Keep sites that rise or fall in frequency (Removing variant positions common to all strains with >.95 freq)
 
 Table Example:
 
@@ -51,11 +52,11 @@ Table Example:
 
 ### SNP Position Analysis 
 -------
-[Jupyter notebook contains all analysis and code to analyze SNPs](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/SNP_Analysis.ipynb). 
+[Jupyter Notebook: SNP_Analysis.ipynb](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/SNP_Analysis.ipynb) 
   
-**Contains:**
-- Distribution of filtered SNP locations to determine candidate recombinant regions
-- Extract all genes or just protein coding genes located in SNP rich locations 
+**Contains code:**
+- Plot distribution of filtered SNP locations across all chromosomes
+- Extract all genes located in SNP rich locations from GFF file (from same reference that mapped reads to)
 - Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
 
 - Example of one frame generated from variant position numbers and GFF of reference sequence:
