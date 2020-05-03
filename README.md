@@ -90,32 +90,34 @@ prokka command here
 ```
 
 ### Genome Comparative Analysis and Rearrangement Analysis
-- Using [Mauve](http://darlinglab.org/mauve/download.html) to conduct comparisons against complete Burkholderia _multivorans_ on refseq [NCBI](https://www.ncbi.nlm.nih.gov/assembly). Downloaded all complete genomes in Genbank gbff format (there is 15).  
+- Using [Mauve](http://darlinglab.org/mauve/download.html) to generate whole genome alignments to look at recombinant regions.  
 
-**IMPORTANT NOTE:** Mauve only accepts genbank input as .gbk extension so a helpful bash loop to rename all file extensions in a directory
+**IMPORTANT NOTE:** Mauve only accepts genbank input as .gbk extension, also accepts fasta format so can use reference fasta and contigs obtained from assembly but if do want use genbank format can easily change extension using bash loop:
 
 ```
 for file in *.gbff; do
 mv -- "$file" "${file%.gbff}.gbk"
 done
 ```
-- add code for generating alignments via progressive mauve
-- add all steps for using ClonalOrigin to generate rearrangment maps to be analyzed
+- [ ] Order contigs using progressive mauve
+- [ ] Align all genomes to one another 
+- [ ] Potentially use [ClonalFrameML](https://github.com/xavierdidelot/ClonalFrameML)
 
 ### Phylogenetic Analysis
 STEPS PLAN TO DO:
-- Obtain high quality variants for each strain 
-- Extract all genes containing variants from reference using Bipython
-- write python code to modify reference gene sequences for each sample to contain ALT positions
-- concat all genes together to create consensus fasta sequence for each sample (header being sample name)
-- concat all samples together to create one multifastA 
-- use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment 
-- input sequence alignment into RAXML using following command line:
+- [ ] Need to do recombinant analysis first as those regions can interfere with phylogeny result 
+- [ ] Obtain high quality variants for each strain 
+- [ ] Extract all genes containing variants from reference using Bipython
+- [ ] Write python code to modify reference gene sequences for each sample to contain ALT positions
+- [ ] Concat all genes together to create consensus fasta sequence for each sample (header being sample name)
+- [ ] Concat all samples together to create one multifastA 
+- [ ] Use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment 
+- [ ] Input sequence alignment into RAXML using following command line:
 
 ```
 raxmlHPC -f a -x 43734 -p 89493 -# 100 -s snp_alignment.fasta -n phylo_result -m GTRGAMMA 
 ```
-
+- [ ] Visualize tree using [FigTree](http://evomics.org/resources/software/molecular-evolution-software/figtree/) 
 
 ### Automating steps??? (get to this hopefully eventually)
 - Snakemake pipeline one day 
