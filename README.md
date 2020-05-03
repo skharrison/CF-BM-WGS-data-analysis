@@ -24,7 +24,7 @@ samtools sort -O bam -o AS${sample}.sorted.bam AS${sample}.sam
 gatk MarkDuplicatesSpark -I AS${sample}.sorted.bam -O AS${sample}_marked_duplicates.bam
 samtools index AS${sample}_marked_duplicates.bam
 ```
-- Samtools used to call mpileup files:
+- [Samtools](http://www.htslib.org/) used to call mpileup files:
 ```add mpileup command here
 list_of_samples="218 219 222 223 224 225 226 227 228 229 230 231 232 233 236 237 240"
 for sample in $list_of_samples; do
@@ -35,14 +35,21 @@ done
 
 - if in time add script ran for Indel calling and table generation (link)
 
+![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
+
+
 ### SNP Variant Analysis 
 - link to notebook for filtering and whatever else john wants to say about that stuff 
 
-- Link to notebook on all analysis of filtered variants, maybe add graphs generated in notebook to display what we concluded from our code underneath link to jupyter notebook   
+**Jupyter Notebook [link here somehow] containing all code to analyze:**
+-------
+- Distribution of filtered SNP locations to determine candidate recombinant regions
+- Extract all genes or just protein coding genes located in SNP rich locations 
+- Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
 
--Example of the [jupyter display](docs/python-final.html) 
+- Example of one frame generated from variant position numbers and GFF of reference sequence:
 
-
+![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
 
 
 
@@ -61,9 +68,9 @@ spades.py -k 21,33,55,77 -c --only-assembler -1 $file1 -2 $file2 -o $out
 done
 ```
 > -c minimizes mismatches.   
-> -k 21,33,5,77 because recomennded to use for short paired end Illumina reads.    
+> -k 21,33,5,77 because recommended to use for short paired end Illumina reads.    
 > -1 forward read file -2 reverse read file.    
-> -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own diretory.    
+> -o output file that specified name by replacing the _R1.fastq portion of input file with _output. Allowing for each sample to then be in its own directory.    
 
 - Annotated genomes using Prokka (add command used below)
 
