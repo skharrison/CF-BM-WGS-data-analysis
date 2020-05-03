@@ -35,6 +35,8 @@ done
 
 - if in time add script ran for Indel calling and table generation (link)
 
+![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
+
 
 ### SNP Variant Analysis 
 - link to notebook for filtering and whatever else john wants to say about that stuff 
