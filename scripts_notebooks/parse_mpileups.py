@@ -3,14 +3,14 @@
 import re
 import os
 for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
-    #open only the mpileup files
     if file.endswith(".mpileup") == True:
-        #output text will be appended with all the data
         output_text = ""
         with open(file) as fin:   
             for line in fin:
                 snps = []
                 indels = []
+                actualindels = []
+                ifhas = False
                 acount = 0
                 ccount = 0
                 tcount = 0
@@ -20,9 +20,7 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
                 pos = line.split("\t")[1]
                 refallele = line.split("\t")[2]
                 length = int(line.split("\t")[3])
-                #split by all the characters that don't correspond to a variant
-                for part in re.split("[.,^]",line.split("\t")[4]):
-                    #indels are denoted with a + or - in the beginning of the string
+                for part in re.split("[.,*^]",line.split("\t")[4]):
                     if "-" in part or "+" in part:
                         indels.append(part)
                         continue
@@ -37,6 +35,22 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
                                 ccount+=1
                             elif base == "G" or base == "g":
                                 gcount+=1
+                if len(indels) > 0:
+                    for i in indels:
+                        try:
+                            lenindels = int("".join(re.split("[-+A-Za-z]", i)))
+                        except ValueError:
+                            continue
+                        if lenindels != len(re.split("\d",i)[-1]):
+                            for base in i.split(str(lenindels))[-1][lenindels:]:
+                                if base == "A" or base == "a":
+                                    acount+=1
+                                elif base == "T" or base == "t":
+                                    tcount+=1
+                                elif base == "C" or base == "c":
+                                    ccount+=1
+                                elif base == "G" or base == "g":
+                                    gcount+=1
                 allcounts = [acount,tcount,ccount,gcount]
                 try:
                     allfreqs = [acount/length,tcount/length,ccount/length,gcount/length]
@@ -57,7 +71,7 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
                 if maxfreq == 0.0:
                     continue
                 output_text += sample + "\t" + contig + "\t" + str(pos) + "\t" + str(refallele) + "\t" + str(altallele) + "\t" + str(maxfreq) + "\t" + str(totalreads) + "\t" + str(length) + "\n"
-        fileout = sample + "_variants_withreads.txt"
+        fileout = sample + "_variants_withreads2.txt"
         print(file)
         with open(fileout, "w+") as fout:
             fout.write(output_text)
