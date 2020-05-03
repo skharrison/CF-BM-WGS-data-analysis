@@ -3,7 +3,9 @@
 import re
 import os
 for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
+    #open only the mpileup files
     if file.endswith(".mpileup") == True:
+        #output text will be appended with all the data
         output_text = ""
         with open(file) as fin:   
             for line in fin:
@@ -18,7 +20,9 @@ for file in os.listdir("/home/jnavarro/AS2Calls_test/ASpileups"):
                 pos = line.split("\t")[1]
                 refallele = line.split("\t")[2]
                 length = int(line.split("\t")[3])
+                #split by all the characters that don't correspond to a variant
                 for part in re.split("[.,^]",line.split("\t")[4]):
+                    #indels are denoted with a + or - in the beginning of the string
                     if "-" in part or "+" in part:
                         indels.append(part)
                         continue
