@@ -3,8 +3,7 @@
 
 
 * Repository containing all pieces and code involved in analyzing whole genome sequence short read data of 17 Burkholderia multivorans isolates over 3 year time frame from sputum samples of a patient with cystic fibrosis.
-* Highly recommend use of [Anaconda](https://www.anaconda.com/products/individual) to install software components.  
-* In order to carry out SNP analysis, interactive python3 [Jupyter notebook](https://jupyter.org/) utilized, also easily installed via Anaconda. 
+* In order to carry out SNP analysis, interactive python3 [Jupyter notebook](https://jupyter.org/) utilized, installed via Anaconda. 
 
 **NOTE:** ALL samples analyzed were sequenced with 151bp Illumina paired end reads  
 
@@ -107,11 +106,11 @@ done
 STEPS PLAN TO DO:
 - [ ] Need to do recombinant analysis first as those regions can interfere with phylogeny result 
 - [ ] Obtain high quality variants for each strain 
-- [ ] Extract all genes containing variants from reference using Bipython
+- [ ] Extract all genes from reference using bioython 
 - [ ] Write python code to modify reference gene sequences for each sample to contain ALT positions
 - [ ] Concat all genes together to create consensus fasta sequence for each sample (header being sample name)
 - [ ] Concat all samples together to create one multifastA 
-- [ ] Use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment 
+- [ ] Use [MUSCLE](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Muscle.MuscleCommandline-class.html) or [MAFFT](https://biopython.org/DIST/docs/api/Bio.Align.Applications._Mafft.MafftCommandline-class.html) python wrapper to create sequence alignment (phylip format) 
 - [ ] Input sequence alignment into RAXML using following command line:
 
 ```
