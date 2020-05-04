@@ -55,11 +55,11 @@ Table Example:
 [Jupyter Notebook: SNP_Analysis.ipynb](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/SNP_Analysis.ipynb) 
   
 **Contains code to:**
-- Plot distribution of filtered SNP locations across all chromosomes
+- Plot distribution of filtered SNP positions across all chromosomes
 - Extract all genes located in SNP rich locations from GFF file (from same reference that mapped reads to)
 - Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
 
-- Table created displaying top 15 protein coding genes with highest numbers of SNPs:
+- Table created displaying top 15 protein coding genes with highest numbers of SNPs positions:
 
 ![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
 
