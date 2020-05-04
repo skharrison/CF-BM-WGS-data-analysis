@@ -61,7 +61,7 @@ Table Example:
 
 - Table created displaying top 15 protein coding genes with highest numbers of SNPs positions:
 
-![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/table_image.png)
+![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/top_15.png)
 
 
 ### Genome Assembly
