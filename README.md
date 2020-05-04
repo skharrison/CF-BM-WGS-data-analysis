@@ -103,8 +103,7 @@ done
 - [ ] Potentially use [ClonalFrameML](https://github.com/xavierdidelot/ClonalFrameML)
 
 ### Phylogenetic Analysis
-STEPS PLAN TO DO:
-- [ ] Need to do recombinant analysis first as those regions can interfere with phylogeny result 
+STEPS PLAN TO DO: 
 - [ ] Obtain high quality variants for each strain 
 - [ ] Extract all genes from reference using bioython 
 - [ ] Write python code to modify reference gene sequences for each sample to contain ALT positions
