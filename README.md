@@ -1,3 +1,5 @@
+**By: Sarah Harrison and John Navarro** 
+
 
 # Burkholderia WGS Analysis 
 
