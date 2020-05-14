@@ -1,0 +1,6 @@
+DNA, p1_gene0aln = 1-2724
+DNA, p2_gene1aln = 2725-3765
+DNA, p3_gene2aln = 3766-4305
+DNA, p4_gene3aln = 4306-7302
+DNA, p5_gene4aln = 7303-8449
+DNA, p6_gene5aln = 8450-9058
