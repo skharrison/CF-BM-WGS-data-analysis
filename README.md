@@ -65,6 +65,26 @@ Table Example:
 ![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/top_15.png)
 
 
+### Structural Variant Analysis 
+
+**Programs used:**
+- [Pindel](https://github.com/genome/pindel)
+- [Breakdancer](https://github.com/genome/breakdancer)
+
+Pindel commands:
+```
+```
+Breakdancer commands:
+```
+```
+
+TO DO: 
+[ ] Write python script to convert file formats to VCF format and concat output together
+[ ] Figure out how to merge overlapping calls between callers and write python script to do so on tables 
+[ ] Annotate overlapping (confident) calls made and make table for each sample
+[ ] Compare across samples 
+
+
 ### Genome Assembly
 - Used [Spades](http://home.cc.umanitoba.ca/~psgendb/doc/spades/manual.html) on all previously trimmed paired end data. Now have files such as, AS{sampleID}_R1.fastq and AS{sampleID}_R2.fastq. Then used bash script with loop to accomplish all files. Bash script snippet:
 
