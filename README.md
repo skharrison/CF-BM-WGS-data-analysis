@@ -78,6 +78,8 @@ Breakdancer commands:
 ```
 ```
 
+Example of automated batch script: (link to script)
+
 TO DO: 
 - [ ] Write python script to convert file formats to VCF format and concat output together
 - [ ] Figure out how to merge overlapping calls between callers and write python script to do so on tables 
