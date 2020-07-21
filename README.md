@@ -79,10 +79,10 @@ Breakdancer commands:
 ```
 
 TO DO: 
-[ ] Write python script to convert file formats to VCF format and concat output together
-[ ] Figure out how to merge overlapping calls between callers and write python script to do so on tables 
-[ ] Annotate overlapping (confident) calls made and make table for each sample
-[ ] Compare across samples 
+- [ ] Write python script to convert file formats to VCF format and concat output together
+- [ ] Figure out how to merge overlapping calls between callers and write python script to do so on tables 
+- [ ] Annotate overlapping (confident) calls made and make table for each sample
+- [ ] Compare across samples 
 
 
 ### Genome Assembly
