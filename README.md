@@ -68,8 +68,8 @@ Table Example:
 ### Structural Variant Analysis 
 
 **Programs used:**
-- [Pindel](https://github.com/genome/pindel)
-- [Breakdancer](https://github.com/genome/breakdancer)
+- [Pindel](https://github.com/genome/pindel) Helpful documentation [here](http://gmt.genome.wustl.edu/packages/pindel/user-manual.html)
+- [Breakdancer](https://github.com/genome/breakdancer) Helpful documentation [here](https://gmt.genome.wustl.edu/packages/breakdancer/documentation.html) 
 
 Pindel commands:
 ```
