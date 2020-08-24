@@ -140,7 +140,13 @@ samtools view -h sample.bam \
     | samtools view -Sb - \
     > sample.splitters.bam
     
-
+#run lumpy
+lumpy \
+    -mw 4 \
+    -tt 0 \
+    -pe id:sample,bam_file:sample.discordants.bam,histo_file:sample.lib1.histo,mean:507,stdev:170,read_length:151,min_non_overlap:151,discordant_z:5,back_distance:10,weight:1,min_mapping_threshold:40 \
+    -sr id:sample,bam_file:sample.splitters.bam,back_distance:10,weight:1,min_mapping_threshold:40 \
+    > /lumpy/sample_lumpy.vcf
 ```
 gridss commands:
 ```
@@ -148,11 +154,7 @@ gridss.sh --jar /usr/local/gridss/scripts/gridss.jar --reference ref.fna --outpu
 ```
 TODO: automated shell script to run all on desired samples 
 
-TO DO: 
-- [ ] Write python script to convert file formats to VCF format and concat output together
-- [ ] Figure out how to merge overlapping calls between callers and write python script to do so on tables 
-- [ ] Annotate overlapping (confident) calls made and make table for each sample
-- [ ] Compare across samples 
+### Merging Stuctural Variant Calls
 
 
 ### Genome Assembly
