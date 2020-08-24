@@ -51,18 +51,7 @@ Table Example:
 
 ![merged_table](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/merged_table.png)
 
-### SNP Position Analysis 
--------
-[Jupyter Notebook: SNP_Analysis.ipynb](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/scripts_notebooks/SNP_Analysis.ipynb) 
-  
-**Contains code to:**
-- Plot distribution of filtered SNP positions across all chromosomes
-- Extract all genes located in SNP rich locations from GFF file (from same reference that mapped reads to)
-- Extract all genes with at least one SNP and annotate with protein product when CDS, also count number of SNPs per gene using gene start/stop locations and variant position numbers
-
-- Table created displaying top 15 protein coding genes with highest numbers of SNPs positions:
-
-![Table image](https://github.com/skharrison/CF-BM-WGS-data-analysis/blob/master/top_15.png)
+### SNP Position Analysis
 
 
 ### Structural Variant Analysis 
@@ -70,15 +59,94 @@ Table Example:
 **Programs used:**
 - [Pindel](https://github.com/genome/pindel) Helpful documentation [here](http://gmt.genome.wustl.edu/packages/pindel/user-manual.html)
 - [Breakdancer](https://github.com/genome/breakdancer) Helpful documentation [here](https://gmt.genome.wustl.edu/packages/breakdancer/documentation.html) 
+- [DELLY](https://github.com/dellytools/delly)
+- [Manta](https://github.com/Illumina/manta)
+- [LUMPY](https://github.com/arq5x/lumpy-sv)
+- [Gridss](https://github.com/PapenfussLab/gridss)
 
-Pindel commands:
+pindel commands:
 ```
+## first have to generate config files for each sample, format of file shown below 
+## created each samples pindel configs by using samtools stats bam and using average insert size (saved each config as sample{sampleNum}.txt)
+path/to/bam avginsertSize sampleName
+
+## also created ploidy file that contained each chrom name and the ploidy (since bacterial samples ploidy 1 next to each chrom name)
+
+# run pindel 
+pindel -f ref.fna -i sample_config.txt -o p1 -c ALL -T 8 -Y -a 4 -m 4 -Y ploidy.txt 
+
+# make vcf of output 
+/usr/local/pindel/pindel2vcf -P p1 -r ref.fna -R SALREF -d 20200823 -v sample_pindel.vcf
 ```
-Breakdancer commands:
+breakdancer commands:
 ```
+# config creation:
+perl /usr/local/breakdancer/perl/bam2cfg.pl -g -h ~/sample.bam > sample.cfg
+# run breakdancer: 
+breakdancer-max -r 4 sample.cfg > sample_breakdancer.vcf
 ```
 
-Example of automated batch script: (link to script)
+delly commands:
+```
+# run delly on each bam 
+delly call -g ref.fna -o ample.bcf sample.bam
+
+# after all samples finished merge together
+delly merge -o all_sites.bcf *.bcf
+
+# genotype each sample from merged 
+delly call -g ref.fna -v all_sites.bcf -o /sample$_delly.bcf sample.bam
+
+# convert bcf to vcf 
+bcftools view sample_delly.bcf > sample_delly.vcf
+```
+
+manta commands:
+```
+# NOTE: made sample directories in manta directory prior to running by:
+for num in {1..17} ; do 
+mkdir sample${num}
+done
+
+#set everything up
+configManta.py --bam sample.bam --referenceFasta ref.fna --runDir /sample
+
+#run workflow inside sample directory
+/sample/runWorkflow.py
+
+```
+lumpy commands:
+```
+##generates insert size statistics and generates needed .histo file 
+samtools view sample.bam \
+    | tail -n+100000 \
+    | /usr/local/lumpy-sv/scripts/pairend_distro.py \
+    -r 151 \
+    -X 4 \
+    -N 10000 \
+    -o sample.lib1.histo
+——> this script gives mean/std output that looks like:
+Removed 6 outliers with isize >= 1328
+mean:311.452552553	stdev:125.998418651
+
+— Used the mean and stdev as input for the lumpy script. I Manually entered in numbers to the lumpy script below for each sample but could easily save this output to a file and then parse file to obtain proper input to automate. 
+
+# Extract the discordant paired-end alignments (discordants.bam)
+samtools view -b -F 1294 sample.bam > sample.discordants.bam
+
+# Extract the split-read alignments (splitters.bam)
+samtools view -h sample.bam \
+    | /usr/local/lumpy-sv/scripts/extractSplitReads_BwaMem -i stdin \
+    | samtools view -Sb - \
+    > sample.splitters.bam
+    
+
+```
+gridss commands:
+```
+gridss.sh --jar /usr/local/gridss/scripts/gridss.jar --reference ref.fna --output sample_gridss.vcf.gz --labels sample --assembly sample_g.bam sample.bam
+```
+TODO: automated shell script to run all on desired samples 
 
 TO DO: 
 - [ ] Write python script to convert file formats to VCF format and concat output together
