@@ -28,8 +28,7 @@ ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLE
 bwa mem -M -R '@RG\tID:HSQ-7001360\tSM:AS${sample}\tLB:library1\tPL:ILLUMINA' -M -t 16 GCF_003019965.1_ASM301996v1_genomic.fna ~/trimmed_wgs3/AS${sample}_R1_001_paired.fastq.gz ~/trimmed_wgs3/AS${sample}_R2_001_paired.fastq.gz > AS${sample}.sam
 samtools fixmate -O bam AS${sample}.sam AS${sample}.bam
 samtools sort -O bam -o AS${sample}.sorted.bam AS${sample}.sam
-gatk MarkDuplicatesSpark -I AS${sample}.sorted.bam -O AS${sample}_marked_duplicates.bam
-samtools index AS${sample}_marked_duplicates.bam
+samtools index AS${sample}.sorted.bam
 ```
 - [Samtools](http://www.htslib.org/) used to call mpileup files:
 ```add mpileup command here
